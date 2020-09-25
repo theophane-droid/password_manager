@@ -1,0 +1,35 @@
+{% extends "template.html" %}
+{% block body %}
+   <h1>Password Manager</h1>
+   <h2>By Théophane Dumas</h2>
+   {% if tab %}
+   <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">Content</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+         {% for el in tab %}
+            <tr id="tr_{{el[0]}}" onclick="click_event('{{el[2]}}','{{el[0]}}');">
+               <th scope="row">{{el[0]}}</th>
+               <td>{{el[1]}}</td>
+               <td>
+                  <span class="points" style="visibility: visible;">...</span><span class="password" style="visibility: hidden">{{el[2]}}</span>
+
+               </td>
+               <td>
+                  <a href="/remove_pass?id={{el[0]}}">Remove</a>
+               </td>
+            </tr>
+      {% endfor %}
+      </tbody>
+   </table>
+    {% else %}
+    No password
+    {% endif %}
+   
+{% endblock %}

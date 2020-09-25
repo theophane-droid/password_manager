@@ -1,0 +1,22 @@
+{% extends "template.html" %}
+{% block body %}
+   <h1>Password Manager</h1>
+   <h2>By Théophane Dumas</h2>
+   {% if error %}
+    <div class="alert alert-danger" role="alert">
+        Wrong password
+    </div>
+   {% endif %}
+   <form action="valid_login" method="POST">
+        <label>name</label>
+        <br>
+        <input type="text" name="name">
+        <br>
+        <br>
+        <label>password</label>
+        <br>
+        <input type="text" name="password" type="password">
+        <br>
+        <input type="submit" value="Validate">
+   </form>
+{% endblock %}

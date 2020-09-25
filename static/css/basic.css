@@ -1,0 +1,8 @@
+h1, h2, p, form{
+    text-align: center;
+    width: auto;
+}
+form {
+    margin-left: auto;
+    margin-right: auto;
+}
